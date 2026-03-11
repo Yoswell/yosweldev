@@ -1,0 +1,17 @@
+---
+import AngleArrowIcon from '@/components/utils/icons/AngleArrowIcon.astro'
+import Anchor from '@/components/utils/Anchor.astro'
+
+const { ...props } = Astro.props
+---
+
+<Anchor
+    href={ props.href }
+    target='_blank'
+    rel='noopener noreferrer'
+    aria-label={`Loaded ${props.href} link`}
+    class={ Astro.props.class }>
+
+    <slot />
+    <AngleArrowIcon class='absolute top-3 right-3 text-(--fg3) rotate-45 size-4 stroke-2 group-hover:text-white ease-in-out duration-200' />
+</Anchor>

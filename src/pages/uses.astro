@@ -1,0 +1,27 @@
+---
+import Hr from '@/components/utils/Hr.astro'
+import Footer from '@/components/Footer.astro'
+import Main from '@/components/Main.astro'
+import Layout from '@/layouts/Layout.astro'
+
+import TitleSection from '@/components/sections/TitleSection.astro'
+import UsesSection from '@/components/sections/uses/UsesSection.astro'
+---
+
+<Layout title='Tools use ~ Yoswel B'>
+    <Main>
+        <TitleSection
+            class='flex gap-2'
+            title='My power'
+            stress='up tools'
+        />
+    
+        <Hr />
+    
+        <UsesSection />
+    
+        <Hr />
+        
+        <Footer />
+    </Main>
+</Layout>

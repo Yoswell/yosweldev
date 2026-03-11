@@ -1,0 +1,24 @@
+---
+import Hr from '@/components/utils/Hr.astro'
+import TypoMono from '@/components/utils/TypoMono.astro'
+
+import TitleSection from '@/components/sections/TitleSection.astro'
+import OpenToWork from '@/components/OpenToWork.astro'
+---
+
+<TitleSection
+    class='flex gap-2'
+    title="It's, time to"
+    stress='connect'
+/>
+
+<Hr />
+
+<OpenToWork />
+
+<Hr />
+
+<div class='flex items-center justify-between p-2'>
+    <TypoMono class='text-(--fg2) text-sm font-mono'>{`{\\}`}</TypoMono>
+    <span class='text-(--fg2) text-sm'>&copy; 2026</span>
+</div>

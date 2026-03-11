@@ -1,0 +1,16 @@
+---
+const { as: Tag = 'span' } = Astro.props
+---
+
+<Tag class={`text-white font-title-italic ${ Astro.props.class }`}>
+    <slot />
+</Tag>
+
+<style>
+    .text-gradient-to-t {
+        background: linear-gradient(to top, white, var(--fg3));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+</style>

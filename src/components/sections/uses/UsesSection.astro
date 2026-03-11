@@ -1,0 +1,32 @@
+---
+import Row from '@/components/sections/uses/Row.astro'
+import Hr from '@/components/utils/Hr.astro'
+
+import { HACKING_LIST, SKILLS_LIST, TOOLS_USE_LIST } from '@/const/Tools_use_list'
+---
+
+<section>
+    <Row
+        number='01'
+        title='Dev Tools'
+        LIST={ TOOLS_USE_LIST }
+    />
+
+    <Hr />
+    <Hr class='mt-4 hidden md:block' />
+    
+    <Row
+        number='02'
+        title='Skills'
+        LIST={ SKILLS_LIST }
+    />
+
+    <Hr />
+    <Hr class='mt-4 hidden md:block' />
+
+    <Row
+        number='03'
+        title='Hacking Tools'
+        LIST={ HACKING_LIST }
+    />
+</section>

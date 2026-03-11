@@ -1,0 +1,57 @@
+---
+import CancelIcon from '@/components/utils/icons/CancelIcon.astro'
+import MapPinIcon from '@/components/utils/icons/MapPinIcon.astro'
+import TypoMono from '@/components/utils/TypoMono.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+
+import { EVENTS_LIST } from '@/const/Images_list'
+
+const { ...props } = Astro.props
+---
+
+<section 
+    id={`float-${ props.key }-container`} 
+    class='hidden w-full h-full flex-col items-center justify-end fixed inset-0 backdrop-blur-xs z-20'>
+    
+    <div class='max-w-2xl w-[calc(100%-24px)] bg-(--bg1) border-t border-x border-(--br2) rounded-t-lg p-6 relative animate-fade-in-up animate-duration-200'>
+        
+        {/* Top phone line */}
+        <span class='w-26 h-1 bg-(--bg3) rounded-full absolute top-4 left-1/2 -translate-x-1/2' />
+        
+        {EVENTS_LIST.map((event) => (
+            event.slug === props.key && (
+                <article class='grid gap-4 leading-none'>
+                    <header>
+                        <TypoMono class='text-(--fg3) uppercase'>
+                            { event.slug }
+                        </TypoMono>
+                        <TypoTitle class='block text-2xl mt-2'>
+                            { event.name }
+                        </TypoTitle>
+                    </header>
+
+                    <article class='flex flex-col gap-4'>
+                        {event.description.map((paragraph) => (
+                            <p class='text-(--fg2) text-sm leading-6'>
+                                { paragraph }
+                            </p>
+                        ))}
+                    </article>
+
+                    <footer class='flex items-center gap-2 text-white text-sm'>
+                        <MapPinIcon class='size-4 stroke-2' />
+                        <span>
+                            { event.location }
+                        </span>
+                    </footer>
+
+                    <button
+                        id={`close-${ props.key }-button`} 
+                        class='border border-dashed border-neutral-800 p-1 absolute top-6 right-6 rounded-md cursor-pointer hover:bg-(--bg2)'>
+                        <CancelIcon class='block text-white size-5 stroke-2' />
+                    </button>
+                </article>
+            )
+        ))}
+    </div>
+</section>

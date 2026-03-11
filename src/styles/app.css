@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+
+:root {
+    --bg0: #080808;
+    --bg1: #0b0b0b;
+    --bg2: #0f0f0f;
+    --bg3: #1e1e1e;
+    --bg4: #2a2a2a;
+    --fg0: #ffffff;
+    --fg1: #dadada;
+    --fg2: #a8a9ac;
+    --fg3: #646464;
+    --br0: #090909;
+    --br1: #121212;
+    --br2: #1e1e1e;
+    --br3: #222222;
+    --br4: #363636;
+
+    --ac1: #ff1a4f;
+}
+
+@font-face {
+    font-family: 'Geist Mono Regular';
+    src: url('/fonts/dGV4dC1mb250Cg.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit Thin';
+    src: url('/fonts/bW9uby1mb250Cg.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Serif Regular';
+    src: url('/fonts/dGl0bGUtZm9udAo.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Instrument Serif Italic';
+    src: url('/fonts/dGl0tGUtaXRhbGljLWZvbnQK.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+.font-logo {
+   font-family: 'Nova Mono', monospace;
+}
+
+.font-title {
+    font-family: 'Instrument Serif Regular', sans-serif;
+}
+
+.font-title-italic {
+    font-family: 'Instrument Serif Italic', sans-serif;
+}
+
+.font-mono {
+    font-family: 'Geist Mono Regular', monospace;
+}

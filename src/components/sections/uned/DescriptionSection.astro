@@ -1,0 +1,40 @@
+---
+import TypoColored from '@/components/utils/TypoColored.astro'
+import TypoMono from '@/components/utils/TypoMono.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+---
+
+<section class='grid gap-4 p-6 leading-none'>
+    <header>
+        <TypoMono
+            class='text-(--fg3) uppercase'>
+            Uned Community
+        </TypoMono>
+
+        <TypoTitle class='block text-5xl mt-4 leading-14'>
+            Connect with people<br />
+            and be part of the <TypoColored class='text-5xl animate-blurred-fade-in'>community</TypoColored>
+        </TypoTitle>
+    </header>
+
+    <p class='text-(--fg2) leading-7'>
+        Welcome to the official WhatsApp community for UNED students.
+    </p>
+        
+    <p class='text-(--fg2) leading-7'>
+        This space is part of a student hours program designed to complement your academic journey. Here you'll find groups for each course, created to facilitate communication, share resources, and build connections with fellow students who are taking the same subjects as you. While we're here to help each other share notes, clarify doubts, and collaborate on course materials, this platform does not replace official tutors, professors, or the university's academic platform. Think of it as an additional space to enhance your learning experience through peer-to-peer collaboration.
+    </p>
+
+    <p class='text-(--fg2) leading-7'>
+        By joining these groups, you'll have the opportunity to connect with classmates across different courses and campuses, stay updated on course-related discussions, and receive support from fellow students who understand the challenges of balancing studies with other responsibilities. Whether you're looking for study partners, need clarification on assignments, or simply want to feel more connected to the UNED community, these groups are here to help.
+    </p>
+</section>
+
+<style>
+    .title-gradient-to-r {
+        background: linear-gradient(to right, #ff1a4f, #a57fff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+</style>

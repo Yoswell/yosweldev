@@ -1,0 +1,32 @@
+---
+import Hr from '@/components/utils/Hr.astro'
+import Footer from '@/components/Footer.astro'
+import Main from '@/components/Main.astro'
+import Layout from '@/layouts/Layout.astro'
+
+import TitleSection from '@/components/sections/TitleSection.astro'
+import DescriptionSection from '@/components/sections/about/DescriptionSection.astro'
+import ExperienceSection from '@/components/sections/about/ExperienceSection.astro'
+---
+
+<Layout title='About ~ Yoswel B'>
+    <Main>
+        <DescriptionSection />
+    
+        <Hr />
+    
+        <TitleSection
+            class='flex gap-2'
+            title='Experience, dreams'
+            stress='to life'
+        />
+    
+        <Hr />
+        
+        <ExperienceSection />
+        
+        <Hr />
+
+        <Footer />
+    </Main>
+</Layout>

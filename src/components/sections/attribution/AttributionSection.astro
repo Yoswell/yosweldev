@@ -1,0 +1,45 @@
+---
+import Hr from '@/components/utils/Hr.astro'
+import TypoMono from '@/components/utils/TypoMono.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+import Row from '@/components/sections/attribution/Row.astro'
+
+import { INSPIRATION_LIST } from '@/const/Inspiration_list'
+---
+
+<section>
+    <div class='grid md:grid-cols-[200px_1fr] lg:grid-cols-[220px_1fr] xl:grid-cols-[240px_1fr] md:gap-6'>
+        <article class='border-v-dashes md:border-r p-6 leading-none'>
+            <TypoMono class='text-(--fg3) uppercase'>
+                01
+            </TypoMono>
+            
+            <TypoTitle class='block text-2xl mt-1'>
+                The Journey
+            </TypoTitle>
+        </article>
+    
+        <article class='grid gap-4 border-v-dashes border-t md:border-l md:border-t-0 p-6 leading-none'>
+            <p class='text-(--fg2) leading-7'>
+                In 2026, <strong>I stumbled into Astro while watching Midu's videos</strong>. One video led to another, and suddenly I was opening my terminal thinking let's see what this framework actually does.
+            </p>
+    
+            <p class='text-(--fg2) leading-7'>
+                What started as a <strong>curiosity-driven</strong> experiment quickly became my portfolio. No grand plans, no Figma designs just me figuring things out as I went. I kept asking myself: <strong>do I really need this component?</strong> <strong>Does this really need JavaScript?</strong> Most of the time, the answer was no.
+            </p>
+    
+            <p class='text-(--fg2) leading-7'>
+                So here it is. A simple, functional space that does exactly what it needs to do. Born from late-night YouTube rabbit holes and shaped by the idea that sometimes less really is more.
+            </p>
+        </article>
+    </div>
+
+    <Hr />
+    <Hr class='mt-4 hidden md:block' />
+
+    <Row
+        number="02"
+        title="Inspirations"
+        LIST={ INSPIRATION_LIST }
+    />
+</section>

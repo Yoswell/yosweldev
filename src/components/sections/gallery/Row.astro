@@ -1,0 +1,127 @@
+---
+import TypoMono from '@/components/utils/TypoMono.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+
+import FlySvg from '@/images/fly-source.svg'
+import Modal from '@/components/sections/gallery/Modal.astro'
+import EyeIcon from '@/components/utils/icons/EyeIcon.astro'
+
+import { Image } from 'astro:assets'
+import { IMAGES_LIST } from '@/const/Images_list'
+
+const { ...props } = Astro.props
+---
+
+<section class='flex flex-col relative'>
+    <article class='p-6 relative overflow-hidden'>
+        <header class='flex flex-col gap-1'>
+            <TypoMono class='text-(--fg3) uppercase'>
+                { props.index }
+            </TypoMono>
+            
+            <TypoTitle class='block text-2xl'>
+                { props.title }
+            </TypoTitle>
+
+            <p class='text-(--fg2) text-sm leading-relaxed'>
+                { props.eventName }
+            </p>
+        </header>
+
+        <Image
+            src={ FlySvg }
+            alt='Fly source background'
+            class='absolute -bottom-9.5 -right-48 w-115 saturate-0 select-none pointer-events-none animate-jelly'
+        />
+
+        <button
+            id={`read-${ props.key }-button`} 
+            class='absolute -bottom-4 -right-3.25 bg-neutral-900/10 backdrop-blur-xs border border-(--br3) rounded-full p-2 cursor-pointer animate-jelly'>
+
+            <svg class='w-20 grid place-content-cente transform-origin-center-center animate-spin animate-duration-[8s]' fill='black' overflow='visible' viewBox='0 0 100 100'>
+                <path d='M 0 50 L 0 50 A 1 1 0 0 1 100 50 L 100 50 L 100 50 A 1 1 0 0 1 0 50 L 0 50' fill='transparent' id='curve-wnxkz4' stroke-width='none'></path>
+                <text>
+                    <textPath dominant-baseline='hanging' href='#curve-wnxkz4' startOffset='0' style='font-size:13px;font-weight:600;word-spacing:10px;letter-spacing:2.1px;fill:rgba(242, 242, 242, 0.9)'>
+                        VIEW DETAILS · VIEW DETAILS ·
+                    </textPath>
+                </text>
+            </svg>
+
+            <div class='w-10 aspect-square grid place-content-center bg-neutral-600/10 border border-neutral-600/30 rounded-full absolute top-1/2 left-1/2 -translate-1/2'>
+                <EyeIcon class='size-5 stroke-2 text-white' />
+            </div>
+        </button>
+    </article>
+    
+    <article class='grid md:grid-cols-2 lg:grid-cols-3 gap-px border-v-dashes border-t overflow-hidden'>
+        {IMAGES_LIST.map((image) => (
+            image.slug === props.key && (
+                <div class='w-full min-h-130 outline outline-(--br2) p-2 group bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px]'>
+                    <img
+                        src={ image.src }
+                        alt={ image.alt }
+                        decoding='async'
+                        fetchpriority='low'
+                        loading='lazy'
+                        onload='this.setAttribute("data-img-loaded", "true");'
+                        class='
+                            w-full h-full object-cover border border-(--br1) rounded-lg select-none pointer-events-none
+                            saturate-0 group-hover:saturate-100
+                            duration-300 transition-all [&:not([data-img-loaded])]:opacity-0
+                        '
+                    />
+                </div>
+            )
+        ))}
+    </article>
+
+    <Modal
+        key={ props.key }
+    />
+</section>
+
+<script>
+    const btnEcsc = document.getElementById('read-ecsc_2025-button')
+    const btnCsc = document.getElementById('read-csc_2025-button')
+
+    const btnCloseEcsc = document.getElementById('close-ecsc_2025-button') 
+    const btnCloseCsc = document.getElementById('close-csc_2025-button')
+
+    const menuEcsc = document.getElementById('float-ecsc_2025-container')
+    const menuCsc = document.getElementById('float-csc_2025-container')
+
+    btnEvent({ btn: btnEcsc, menu: menuEcsc })
+    btnEvent({ btn: btnCsc, menu: menuCsc })
+
+    btnClose({ btn: btnCloseEcsc, menu: menuEcsc })
+    btnClose({ btn: btnCloseCsc, menu: menuCsc })
+
+    function btnEvent({ btn, menu }: { 
+        btn: HTMLElement | null
+        menu: HTMLElement | null
+    }) {
+        btn?.addEventListener(('click'), e => {
+            e.preventDefault()
+            console.log(menu)
+            
+            if (menu?.classList.contains('hidden')) {
+                menu.classList.remove('hidden')
+                menu.classList.add('flex')
+            }
+        })
+    }
+
+    function btnClose({ btn, menu }: { 
+        btn: HTMLElement | null
+        menu: HTMLElement | null
+    }) {
+        btn?.addEventListener(('click'), e => {
+            e.preventDefault()
+            
+            if (menu?.classList.contains('flex')) {
+                menu.classList.remove('flex')
+                menu.classList.add('hidden')
+            }
+        })
+    }
+</script>

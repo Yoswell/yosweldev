@@ -1,0 +1,61 @@
+---
+const count = 100
+const particles = Array.from({ length: count })
+---
+
+<div class='w-full h-full absolute inset-0 overflow-hidden pointer-events-none'>
+    {particles.map((_, i) => {
+        const size = Math.random() * 1
+        const duration = Math.random() * 20 + 10
+        const left = Math.random() * 100
+        const bottom = Math.random() * 100
+
+        return (
+            <span class='firefly absolute rounded-full bg-white'
+                style={{
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    left: `${left}%`,
+                    bottom: `${bottom}%`,
+                    animationDuration: `${duration}s`,
+                }}
+            />
+        )
+    })}
+</div>
+
+<style>
+    .firefly {
+        opacity: 0.2;
+        animation-name: floatFirefly;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes floatFirefly {
+        0% {
+            transform: translate(0, 0) scale(1);
+            opacity: .2;
+        }
+
+        25% {
+            transform: translate(30px, -40px) scale(1.2);
+            opacity: 1;
+        }
+
+        50% {
+            transform: translate(-20px, -80px) scale(.9);
+            opacity: .6;
+        }
+
+        75% {
+            transform: translate(40px, -20px) scale(1.1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(0, 0) scale(1);
+            opacity: .3;
+        }
+    }
+</style>

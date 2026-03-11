@@ -1,0 +1,47 @@
+---
+import MapPinIcon from '@/components/utils/icons/MapPinIcon.astro'
+import TypoMono from '@/components/utils/TypoMono.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+import BagIcon from '@/components/utils/icons/BagIcon.astro'
+
+const { ...props } = Astro.props
+---
+
+<article class='flex flex-col border-v-dashes md:border-r p-6'>
+    <TypoMono class='text-(--fg3) uppercase'>
+        { props.joinedDate }
+    </TypoMono>
+    
+    <header class='flex items-center gap-3 my-4'>
+        <div class='w-10 aspect-square bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px] border border-(--br2) rounded-md relative overflow-hidden pointer-events-none select-none animate-tada'>
+            <img
+                src={ props.logo }
+                alt={ props.logoAlt }
+                decoding='async'
+                onload='this.setAttribute("data-img-loaded", "true");'
+                class='duration-100 ease-in-out [&:not([data-img-loaded])]:opacity-0 [&:not([data-img-loaded])]:scale-0'
+            />
+        </div>
+        <TypoTitle class='text-3xl'>
+            { props.company }
+        </TypoTitle>
+    </header>
+
+    <footer>
+        {props.location  && (
+            <div class='flex items-center gap-2 text-(--fg2) text-sm mb-1'>
+                <MapPinIcon class='size-4 stroke-2' />
+                <span>
+                    { props.location }
+                </span>
+            </div>
+        )}
+    
+        <div class='flex items-center gap-2 text-(--fg2) text-sm'>
+            <BagIcon class='size-4 stroke-2' />
+            <span>
+                { props.workMode }
+            </span>
+        </div>
+    </footer>
+</article>

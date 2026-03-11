@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets'
+
+import myImage from '@/images/crambled-paper-big.avif'
+---
+
+<section
+    id='float-paper-banner'
+    class='mask-to-b w-full h-96 opacity-10 absolute top-0 left-0 before:absolute before:inset-0 before:w-full before:h-80 before:bg-[url("/backgrounds/squares-bg.svg")] before:bg-size-[60px_60px]'>
+    
+    <Image
+        src={ myImage }
+        alt='Crambled paper background'
+        class='w-full h-full object-cover'
+    />
+</section>
+
+<style>
+    .mask-to-b {
+        mask-image: linear-gradient(to bottom, black, transparent 80%);
+        -webkit-mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+</style>

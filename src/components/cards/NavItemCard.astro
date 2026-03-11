@@ -1,0 +1,22 @@
+---
+import Anchor from '@/components/utils/Anchor.astro'
+
+const { ...props } = Astro.props
+---
+
+<Anchor
+    href={ props.href }
+    rel='noopener noreferrer'
+    class={ Astro.props.class }>
+
+    <slot />
+    
+    <div>
+        <h6 class='text-white text-sm'>
+            { props.head }
+        </h6>
+        <span class='block text-(--fg2) text-xs whitespace-nowrap'>
+            { props.content }
+        </span>
+    </div>
+</Anchor>

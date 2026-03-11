@@ -1,0 +1,63 @@
+---
+import TypoMono from '@/components/utils/TypoMono.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+
+import NoiseBackground from '@/components/backgrounds/NoiseBackground.astro'
+import LinkCard from '@/components/cards/LinkCard.astro'
+
+interface RowProps {
+    number: string
+    title: string
+
+    LIST: {
+        name: string
+        description: string
+        href: string
+    }[]
+}
+
+const { number, title, LIST } = Astro.props as RowProps
+---
+
+<div class='grid md:grid-cols-[200px_1fr] lg:grid-cols-[220px_1fr] xl:grid-cols-[240px_1fr] md:gap-6'>
+    <article class='border-v-dashes md:border-r p-6 leading-none'>
+        <header>
+            <TypoMono class='text-(--fg3) uppercase'>
+                { number }
+            </TypoMono>
+            
+            <TypoTitle class='block text-2xl mt-1'>
+                { title }
+            </TypoTitle>
+        </header>
+    </article>
+
+    <article class='border-v-dashes border-t md:border-l md:border-t-0 p-6 relative overflow-hidden'>
+        <ul class='grid md:grid-cols-2 gap-2 leading-none'>
+            {LIST.map((item, index) => (
+                <li class='border border-(--br2) rounded-lg p-4 relative overflow-hidden animate-fade-in-up group'>
+                   <LinkCard
+                       href={ item.href }
+                       aria-label={ item.name }
+                       class='flex items-center gap-3'
+                       arrow>
+
+                       <div>
+                           <TypoMono class='text-(--fg3)'>
+                               0{ index + 1 }
+                           </TypoMono>
+                           <h6 class='text-white block mt-4'>
+                               { item.name }
+                           </h6>
+                           <span class='text-(--fg2) text-sm block mt-2 whitespace-nowrap'>
+                               { item.description }
+                           </span>
+                       </div>
+
+                       <NoiseBackground />
+                    </LinkCard>
+                </li>
+            ))}
+        </ul>
+    </article>
+</div>

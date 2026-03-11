@@ -1,0 +1,117 @@
+---
+import FloatPaperBanner from "@/components/FloatPaperBanner.astro"
+
+const { title } = Astro.props
+
+const { pathname } = Astro.url;
+
+const PATHS_TO_SHOW_BANNER = [
+	'/about',
+	'/about/',
+	'/links',
+	'/links/',
+	'/uses',
+	'/uses/',
+	'/uned',
+	'/uned/',
+	'/attribution',
+	'/attribution/',
+	'/contact',
+	'/contact/'
+];
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover' />
+
+		<meta name='title' content='Yoswel ~ X-Force Penetration Tester ~ Full-Stack Developer ~ Personal Portfolio' />
+		<meta name='description' content='Personal portfolio of Yoswel - Software Developer & Creative Technologist. Explore projects, skills, and professional journey'/>
+		<meta name='keywords' content='Yoswel, portfolio, software developer, creative technologist, web development, programming, personal website'/>
+		<meta name='author' content='Yoswel' />
+		<meta name='robots' content='index, follow' />
+
+		<meta property='og:type' content='website' />
+		<meta property='og:url' content='https://yosweldev.vercel.app' />
+		<meta property='og:title' content='Yoswel ~ X-Force Penetration Tester ~ Full-Stack Developer ~ Personal Portfolio' />
+		<meta property='og:description' content='Personal portfolio of Yoswel - Software Developer & Creative Technologist. Explore projects, skills, and professional journey' />
+
+		<meta name='theme-color' content='#000000' media='(prefers-color-scheme: dark)' />
+		<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
+		<meta name='color-scheme' content='dark light' />
+
+		<link rel='preload' href='/fonts/bW9uby1mb250Cg.woff2' as='font' crossorigin='' type='font/woff2' />
+		<link rel='preload' href='/fonts/dGl0bGUtZm9udAo.woff2' as='font' crossorigin='' type='font/woff2' />
+		<link rel='preload' href='/fonts/dGl0tGUtaXRhbGljLWZvbnQK.woff2' as='font' crossorigin='' type='font/woff2' />
+		<link rel='preload' href='/fonts/dGV4dC1mb250Cg.woff2' as='font' crossorigin='' type='font/woff2' />
+
+		<link rel='preload' href='/backgrounds/lines-bg.svg' type='image/svg+xml'  as='image' title='Lines Background' />
+		<link rel='preload' href='/backgrounds/squares-bg.svg' type='image/svg+xml'  as='image' title='Squares Background' />
+
+		<link rel='preload' href='/static/images/gallery/csc-2025-1.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-2.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-3.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-4.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-5.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-6.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-7.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-8.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-9.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-10.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-11.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/csc-2025-12.jpg' type='image/jpeg' as='image' title='CyberSec Challenge 2025' />
+
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-1.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-2.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-3.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-4.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-5.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-6.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-7.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-8.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-9.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-10.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-11.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+		<link rel='preload' href='/static/images/gallery/ecsc-2025-12.jpg' type='image/jpeg' as='image' title='Erupean Cybersecurity Challenge 2025' />
+
+		<link rel='icon' href='/favicon.ico' />
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Yoswel",
+				"url": "https://yosweldev.vercel.app",
+				"jobTitle": "X-Force Penetration Tester & Full-Stack Developer",
+				"knowsAbout": [
+					"Cybersecurity",
+					"Penetration Testing",
+					"Full-Stack Development",
+					"Ethical Hacking"
+				],
+				"affiliation": {
+					"@type": "Organization",
+					"name": "IBM X-Force"
+				},
+				"sameAs": [
+					"https://github.com/Yoswell",
+					"https://linkedin.com/in/yoswel"
+				],
+				"alumniOf": {
+					"@type": "CollegeOrUniversity",
+					"name": "UNED"
+				}
+			}
+		</script>
+
+		<title>
+			{ title }
+		</title>
+	</head>
+	<body>
+		{ PATHS_TO_SHOW_BANNER.includes(pathname) && <FloatPaperBanner /> }
+		<slot />
+	</body>
+</html>

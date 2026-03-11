@@ -1,0 +1,65 @@
+---
+import FlySvg from '@/images/fly-source.svg'
+
+import NoiseBackground from '@/components/backgrounds/NoiseBackground.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+import Anchor from '@/components/utils/Anchor.astro'
+import FireIcon from '@/components/utils/icons/FireIcon.astro'
+
+import { Image } from 'astro:assets'
+---
+
+<section class='p-4 md:p-6'>
+    <div class='flex flex-col border border-(--br2) rounded-lg p-6 relative overflow-hidden'>
+        <TypoTitle class='text-3xl'>
+            Try hard, and never stop exploring
+        </TypoTitle>
+
+        <p class='sm:max-w-[45ch] md:max-w-[50ch] lg:max-w-[60ch] text-(--fg2) mt-2 leading-relaxed'>
+            Always open to collaboration, security discussions, and helping newcomers in the tech. <strong>Full-time roles & freelance projects</strong> are welcome.
+        </p>
+
+        <div class='flex items-center gap-2 mt-4'>
+            <Anchor 
+                href='https://github.com/Yoswell'
+                target='_blank'
+                aria-label='Github profile'
+                class='text-sky-300'>
+                Github
+            </Anchor>
+
+            <span class='text-(-fg3)'>~</span>
+
+            <Anchor 
+                href='https://www.linkedin.com/in/yoswel'
+                target='_blank'
+                aria-label='LinkedIn profile'
+                class='text-sky-300'>
+                LinkedIn
+            </Anchor>
+        </div>
+
+        <Image
+            src={ FlySvg }
+            class='hidden sm:block absolute -bottom-7.5 -right-42 w-115 saturate-0 animate-jelly'
+            alt='Fly source background'
+        />
+
+        <NoiseBackground />
+        
+        <div class='hidden sm:block absolute -bottom-2 right-3.25 bg-neutral-900/10 backdrop-blur-xs border border-(--br3) rounded-full p-2 animate-jelly'>
+            <svg class='w-20 grid place-content-cente transform-origin-center-center animate-spin animate-duration-[8s]' fill='black' overflow='visible' viewBox='0 0 100 100'>
+                <path d='M 0 50 L 0 50 A 1 1 0 0 1 100 50 L 100 50 L 100 50 A 1 1 0 0 1 0 50 L 0 50' fill='transparent' id='curve-wnxkz4' stroke-width='none'></path>
+                <text>
+                    <textPath dominant-baseline='hanging' href='#curve-wnxkz4' startOffset='0' style='font-size:13px;font-weight:600;word-spacing:4px;letter-spacing:2.1px;fill:rgba(242, 242, 242, 0.9)'>
+                        OPEN TO WORK · OPEN TO WORK ·
+                    </textPath>
+                </text>
+            </svg>
+
+             <div class='w-10 aspect-square grid place-content-center bg-neutral-600/10 border border-neutral-600/30 rounded-full absolute top-1/2 left-1/2 -translate-1/2'>
+                <FireIcon class='size-5 stroke-2 text-white' />
+            </div>
+        </div>
+    </div>
+</section>

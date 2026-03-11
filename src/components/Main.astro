@@ -1,0 +1,22 @@
+---
+import Navbar from '@/components/navigation/Navbar.astro'
+import SideColumn from '@/components/utils/SideColumn.astro'
+import PoweredBy from '@/components/PoweredBy.astro'
+
+import '@/styles/app.css'
+import '@/styles/global.css'
+---
+
+<Navbar />
+
+<section class='sm:max-w-5xl lg:max-w-7xl w-full h-full mx-auto grid grid-cols-[auto_1fr_auto]'>
+    <SideColumn class='border-x' />
+    
+    <section class='pt-10 relative'>
+        <slot />
+    </section>
+
+    <SideColumn class='border-x' />
+</section>
+
+<PoweredBy />

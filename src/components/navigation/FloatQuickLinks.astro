@@ -1,0 +1,66 @@
+---
+import NavItemCard from '@/components/cards/NavItemCard.astro'
+import MacCommandIcon from '@/components/utils/icons/MacCommandIcon.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+
+import { QUICK_ACCESS_LIST } from '@/const/Quick_access_list'
+---
+
+<button
+    id='mac-command-button'
+    class='flex items-center cursor-pointer'>
+
+    <MacCommandIcon class='size-4.5 stroke-2' />
+</button>
+
+<div 
+    id='nav-more-container'
+    class='hidden sm:grid-cols-[200px_1fr] gap-4 absolute top-10 right-0 bg-(--bg0)/80 backdrop-blur-xl border border-(--br2) rounded-lg p-4'>
+
+    <NavItemCard
+        href='/gallery'
+        class='w-full h-40 sm:h-full md:h-full flex flex-col justify-end bg-[url("/backgrounds/lines-bg.svg")] bg-size-[50px_50px] border border-(--br2) rounded-lg relative overflow-hidden'>
+
+        <footer class='p-3'>
+            <TypoTitle class='text-2xl text-white relative z-10'>
+                Gallery
+            </TypoTitle>
+
+            <p class='text-(--fg2) text-sm relative z-10'>
+                My professional journey
+            </p>
+        </footer>
+    </NavItemCard>
+
+    <article class='flex flex-col gap-2'>
+        {QUICK_ACCESS_LIST.map((access) => (
+            <NavItemCard
+                class='flex items-center gap-3 group'
+                href={access.link}
+                head={access.head}
+                content={access.content}>
+                
+                <div class='w-10 aspect-square grid place-content-center bg-(--bg2) border border-(--br2) rounded-md'>
+                    <access.icon class='size-5 text-(--fg2)' />
+                </div>
+            </NavItemCard>
+        ))}
+    </article>
+</div>
+
+<script>
+    const btn = document.getElementById('mac-command-button')
+    const menu = document.getElementById('nav-more-container')
+
+    btn?.addEventListener(('click'), e => {
+        e.preventDefault()
+        
+        if (menu?.classList.contains('hidden')) {
+            menu.classList.remove('hidden')
+            menu.classList.add('grid')
+        } else {
+            menu?.classList.add('hidden')
+            menu?.classList.remove('grid')
+        }
+    })
+</script>

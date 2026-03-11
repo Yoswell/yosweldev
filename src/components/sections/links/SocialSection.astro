@@ -1,0 +1,23 @@
+---
+import Hr from '@/components/utils/Hr.astro'
+import Row from '@/components/sections/links/Row.astro'
+
+import { CODE_LINKS_LIST, SOCIAL_LINKS_LIST } from '@/const/Social_links_list'
+---
+
+<section>
+    <Row
+        number='01'
+        title='Code & craft'
+        LIST={ CODE_LINKS_LIST }
+    />
+
+    <Hr />
+    <Hr class='mt-4 hidden md:block' />
+
+    <Row
+        number='02'
+        title='Connect'
+        LIST={ SOCIAL_LINKS_LIST }
+    />
+</section>

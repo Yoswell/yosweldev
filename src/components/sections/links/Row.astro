@@ -1,0 +1,59 @@
+---
+import TypoMono from '@/components/utils/TypoMono.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+
+import NoiseBackground from '@/components/backgrounds/NoiseBackground.astro'
+import SocialCard from '@/components/cards/SocialCard.astro'
+
+interface RowProps {
+    number: string
+    title: string
+
+    LIST: {
+        head: string
+        content: string
+        link: string
+        icon: any
+    }[]
+}
+
+const { number, title, LIST } = Astro.props as RowProps
+
+const lastItem = LIST.length - 1
+---
+
+<div class='grid md:grid-cols-[200px_1fr] lg:grid-cols-[220px_1fr] xl:grid-cols-[240px_1fr] md:gap-6'>
+    <article class='border-v-dashes md:border-r p-6 leading-none'>
+        <header>
+            <TypoMono class='text-(--fg3) uppercase'>
+                { number }
+            </TypoMono>
+            
+            <TypoTitle class='block text-2xl mt-1'>
+                { title }
+            </TypoTitle>
+        </header>
+    </article>
+
+    <article class='border-v-dashes border-t md:border-l md:border-t-0 p-6 relative overflow-hidden'>
+        <ul class='grid md:grid-cols-2 gap-2 leading-none'>
+            {LIST.map((item, index) => (
+                <li class={`border border-(--br2) rounded-lg p-4 relative overflow-hidden animate-fade-in-up group ${ index === lastItem ? 'md:col-span-2' : '' }`}>
+                   <SocialCard
+                       class='flex items-center gap-3'
+                       href={ item.link }
+                       head={ item.head }
+                       content={ item.content }
+                       arrow>
+            
+                       <div class='w-11 aspect-square grid place-content-center bg-(--bg2) border border-(--br2) rounded-lg'>
+                           <item.icon class='size-5 text-(--fg2)' />
+                       </div>
+            
+                       <NoiseBackground />
+                   </SocialCard>
+                </li>
+            ))}
+        </ul>
+    </article>
+</div>

@@ -1,0 +1,51 @@
+---
+import TypoMono from '@/components/utils/TypoMono.astro'
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+
+interface RowProps {
+    number: string
+    title: string
+
+    LIST: {
+        name: string
+        src: string
+        alt: string
+    }[]
+}   
+
+const { number, title, LIST } = Astro.props as RowProps
+---
+
+<div class='grid md:grid-cols-[200px_1fr] lg:grid-cols-[220px_1fr] xl:grid-cols-[240px_1fr] md:gap-6'>
+    <article class='border-v-dashes md:border-r p-6 leading-none'>
+        <TypoMono class='text-(--fg3) uppercase'>
+            { number }
+        </TypoMono>
+        
+        <TypoTitle class='block text-2xl mt-1'>
+            { title }
+        </TypoTitle>
+    </article>
+
+    <article class='border-v-dashes border-t md:border-l md:border-t-0 relative overflow-hidden'>
+        <ul class='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-px leading-none'>
+            {LIST.map((item) => (
+                <li class='flex flex-col items-center p-6 group hover:bg-(--bg1) hover:outline hover:outline-(--br2)'>
+                    <div class='w-10 border border-dashed border-(--br3) p-1.5 rounded-md group-hover:hidden bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px] animate-tada'>
+                        <img
+                            src={ item.src }
+                            alt={ item.alt }
+                            decoding='async'
+                            onload='this.setAttribute("data-img-loaded", "true");'
+                            class='aspect-square duration-100 ease-in-out [&:not([data-img-loaded])]:opacity-0 [&:not([data-img-loaded])]:scale-0'
+                        />
+                    </div>
+
+                    <p class='h-10 place-content-center hidden text-white text-sm group-hover:grid'>
+                        { item.name }
+                    </p>
+                </li>
+            ))}
+        </ul>
+    </article>
+</div>

@@ -1,0 +1,43 @@
+---
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+
+interface Props {
+    role?: string
+    description?: string
+    responsibilities?: string[]
+    learnedSkills?: string[]
+    lastExperience?: boolean
+}
+
+const { ...props }: Props =  Astro.props
+---
+
+<article class='w-full h-full border-v-dashes md:border-l'>
+    <header class='flex flex-col gap-4 p-6'>
+        <TypoTitle class='text-2xl'>
+            { props.role }
+        </TypoTitle>
+    
+        <p class='text-(--fg2) leading-7'>
+            { props.description }
+        </p>
+    
+        <ul class='text-(--fg3) list-disc space-y-2 ml-4 leading-relaxed'>
+            {props.responsibilities ?.map((item) => 
+                <li set:html={item} />
+            )}
+        </ul>
+    </header>
+
+    <footer>
+        <ul class='text-(--fg3) flex flex-wrap gap-2 border-h-dashes border-t border-transparent p-4 leading-none'>
+            {props.learnedSkills ?.map((item) => 
+                <li class='flex items-center gap-2 bg-(--bg2) border-b border-x border-(--br0) outline outline-(--br2) rounded pt-0.5 pb-px px-2'>
+                    <span class='text-(--fg2) text-xs whitespace-nowrap uppercase'>
+                        { item }
+                    </span>
+                </li>
+            )}
+        </ul>
+    </footer>
+</article>

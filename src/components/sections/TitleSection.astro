@@ -1,0 +1,42 @@
+---
+import TypoTitle from '@/components/utils/TypoTitle.astro'
+import TypoColored from '@/components/utils/TypoColored.astro'
+
+const { ...props } = Astro.props
+---
+
+<section class='flex flex-col items-center justify-start gap-4 py-10 px-6 relative z-10'>
+    <section class='flex gap-4'>
+        <div class='flex items-center animate-fade-in-right'>
+            <span class='mask-to-l w-42 sm:w-48 md:w-56 lg:w-72 h-px bg-(--br2)' />
+            <span class='w-3 aspect-square bg-(--bg1) border border-(--br3) rounded-xs' />
+        </div>
+        
+        <div class='flex items-center animate-fade-in-left'>
+            <span class='w-3 aspect-square bg-(--bg1) border border-(--br3) rounded-xs' />
+            <span class='mask-to-r w-42 sm:w-48 md:w-56 lg:w-72 h-px bg-(--br2)' />
+        </div>
+    </section>
+    
+    <header class={ Astro.props.class }>
+        <TypoTitle class='text-5xl text-center'>
+            { props.title }
+        </TypoTitle>
+
+        <TypoColored class='text-5xl'>
+            { props.stress }
+        </TypoColored>
+    </header>
+</section>
+
+<style>
+    .mask-to-l {
+        -webkit-mask-image: linear-gradient(to right, transparent, black 90%);
+        mask-image: linear-gradient(to right, transparent black 90%);
+    }
+    
+    .mask-to-r {
+        -webkit-mask-image: linear-gradient(to left, transparent, black 90%);
+        mask-image: linear-gradient(to left, transparent black 90%);
+    }
+</style>
