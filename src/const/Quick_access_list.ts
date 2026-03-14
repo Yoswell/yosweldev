@@ -1,4 +1,4 @@
-import LinkIcon from '@/components/utils/icons/LinkIcon.astro'
+import AcademyCapIcon from '@/components/utils/icons/AcademyCapIcon.astro'
 import HearthIcon from '@/components/utils/icons/HearthIcon.astro'
 import SendIcon from '@/components/utils/icons/SendIcon.astro'
 
@@ -7,7 +7,7 @@ export const QUICK_ACCESS_LIST = [
         link: '/uned',
         head: 'Uned',
         content: 'University community',
-        icon: LinkIcon
+        icon: AcademyCapIcon
     },
     {
         link: '/attribution',

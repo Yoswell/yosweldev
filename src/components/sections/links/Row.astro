@@ -2,7 +2,6 @@
 import TypoMono from '@/components/utils/TypoMono.astro'
 import TypoTitle from '@/components/utils/TypoTitle.astro'
 
-import NoiseBackground from '@/components/backgrounds/NoiseBackground.astro'
 import SocialCard from '@/components/cards/SocialCard.astro'
 
 interface RowProps {
@@ -38,7 +37,7 @@ const lastItem = LIST.length - 1
     <article class='border-v-dashes border-t md:border-l md:border-t-0 p-6 relative overflow-hidden'>
         <ul class='grid md:grid-cols-2 gap-2 leading-none'>
             {LIST.map((item, index) => (
-                <li class={`border border-(--br2) rounded-lg p-4 relative overflow-hidden animate-fade-in-up group ${ index === lastItem ? 'md:col-span-2' : '' }`}>
+                <li class={`bg-(--bg1) border border-(--br2) rounded-lg p-4 relative overflow-hidden animate-fade-in-up group ${ index === lastItem ? 'md:col-span-2' : '' }`}>
                    <SocialCard
                        class='flex items-center gap-3'
                        href={ item.link }
@@ -49,8 +48,6 @@ const lastItem = LIST.length - 1
                        <div class='w-11 aspect-square grid place-content-center bg-(--bg2) border border-(--br2) rounded-lg'>
                            <item.icon class='size-5 text-(--fg2)' />
                        </div>
-            
-                       <NoiseBackground />
                    </SocialCard>
                 </li>
             ))}

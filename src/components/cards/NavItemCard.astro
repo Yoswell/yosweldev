@@ -6,7 +6,7 @@ const { ...props } = Astro.props
 
 <Anchor
     href={ props.href }
-    rel='noopener noreferrer'
+    aria-label={`Loaded internal page ~ ${ props.href }`}
     class={ Astro.props.class }>
 
     <slot />
@@ -15,8 +15,8 @@ const { ...props } = Astro.props
         <h6 class='text-white text-sm'>
             { props.head }
         </h6>
-        <span class='block text-(--fg2) text-xs whitespace-nowrap'>
+        <p class='block text-(--fg2) text-xs whitespace-nowrap'>
             { props.content }
-        </span>
+        </p>
     </div>
 </Anchor>

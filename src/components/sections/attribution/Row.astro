@@ -2,7 +2,6 @@
 import TypoMono from '@/components/utils/TypoMono.astro'
 import TypoTitle from '@/components/utils/TypoTitle.astro'
 
-import NoiseBackground from '@/components/backgrounds/NoiseBackground.astro'
 import LinkCard from '@/components/cards/LinkCard.astro'
 
 interface RowProps {
@@ -35,7 +34,7 @@ const { number, title, LIST } = Astro.props as RowProps
     <article class='border-v-dashes border-t md:border-l md:border-t-0 p-6 relative overflow-hidden'>
         <ul class='grid md:grid-cols-2 gap-2 leading-none'>
             {LIST.map((item, index) => (
-                <li class='border border-(--br2) rounded-lg p-4 relative overflow-hidden animate-fade-in-up group'>
+                <li class='bg-(--bg1) border border-(--br2) rounded-lg p-4 relative overflow-hidden animate-fade-in-up group'>
                    <LinkCard
                        href={ item.href }
                        aria-label={ item.name }
@@ -49,12 +48,10 @@ const { number, title, LIST } = Astro.props as RowProps
                            <h6 class='text-white block mt-4'>
                                { item.name }
                            </h6>
-                           <span class='text-(--fg2) text-sm block mt-2 whitespace-nowrap'>
+                           <p class='text-(--fg2) text-sm block mt-2 whitespace-nowrap'>
                                { item.description }
-                           </span>
+                           </p>
                        </div>
-
-                       <NoiseBackground />
                     </LinkCard>
                 </li>
             ))}

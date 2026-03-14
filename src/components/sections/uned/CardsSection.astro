@@ -1,12 +1,11 @@
 ---
-import NoiseBackground from '@/components/backgrounds/NoiseBackground.astro'
 import LinkCard from '@/components/cards/LinkCard.astro'
 import AcademyCapIcon from '@/components/utils/icons/AcademyCapIcon.astro'
 ---
 
 <section class='p-6'>
     <ul class='grid leading-none'>
-        <li class='border border-(--br2) rounded-lg p-4 relative overflow-hidden group animate-fade-in-up'>
+        <li class='bg-(--bg1) border border-(--br2) rounded-lg p-4 relative overflow-hidden group animate-fade-in-up'>
             <LinkCard
                 href='https://chat.whatsapp.com/JhTi5VUM3s8FQp2WdLow8z'
                 class='flex items-center gap-3'
@@ -16,12 +15,14 @@ import AcademyCapIcon from '@/components/utils/icons/AcademyCapIcon.astro'
                     <AcademyCapIcon class='size-5 text-(--fg2)' />
                 </div>
         
-                <div class='leading-none'>
-                    <h6 class='text-white'>Computer Engineering carreer</h6>
-                    <span class='text-(--fg2) text-sm block mt-1 whitespace-nowrap'>Please make clic here to join the community</span>
+                <div>
+                    <h6 class='text-white'>
+                        Computer Engineering carreer
+                    </h6>
+                    <p class='text-(--fg2) text-sm block mt-1 whitespace-nowrap'>
+                        Please make clic here to join the community
+                    </p>
                 </div>
-        
-                <NoiseBackground />
             </LinkCard>
         </li>
     </ul>

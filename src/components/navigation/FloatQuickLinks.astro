@@ -15,7 +15,7 @@ import { QUICK_ACCESS_LIST } from '@/const/Quick_access_list'
 
 <div 
     id='nav-more-container'
-    class='hidden sm:grid-cols-[200px_1fr] gap-4 absolute top-10 right-0 bg-(--bg0)/80 backdrop-blur-xl border border-(--br2) rounded-lg p-4'>
+    class='hidden sm:grid-cols-[200px_1fr] gap-4 bg-(--bg0)/80 backdrop-blur-xl border border-(--br2) rounded-lg p-4 absolute top-10 right-0 z-100'>
 
     <NavItemCard
         href='/gallery'
@@ -36,9 +36,9 @@ import { QUICK_ACCESS_LIST } from '@/const/Quick_access_list'
         {QUICK_ACCESS_LIST.map((access) => (
             <NavItemCard
                 class='flex items-center gap-3 group'
-                href={access.link}
-                head={access.head}
-                content={access.content}>
+                href={ access.link }
+                head={ access.head }
+                content={ access.content }>
                 
                 <div class='w-10 aspect-square grid place-content-center bg-(--bg2) border border-(--br2) rounded-md'>
                     <access.icon class='size-5 text-(--fg2)' />

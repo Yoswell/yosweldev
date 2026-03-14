@@ -1,81 +1,31 @@
 ---
-import FloatCloudBanner from '@/components/FloatCloudBanner.astro'
 import TypoColored from '@/components/utils/TypoColored.astro'
 import TypoTitle from '@/components/utils/TypoTitle.astro'
 ---
 
 <section class='h-full flex flex-col items-center justify-center relative overflow-hidden'>
-    <header class='flex relative'>
-        <article class='first-char relative'>
-            <h1 class='text-8xl font-logo relative z-20 text-transparent'>
-                x
-            </h1>
+    <article class='bg-(--bg1) p-6 -mt-20 relative z-20'>
+        <header class='flex relative'>
+            <span class='w-1000 h-px bg-rose-400/15 absolute -top-16 left-1/2 -translate-x-1/2 z-10' />
+            <span class='w-1000 h-px bg-rose-400/15 absolute -top-18 left-1/2 -translate-x-1/2 z-10' />
+        </header>
 
-            {/* Vertical */}
-            <span class='w-1000 border-v-dashes border-r h-500 absolute top-1/2 left-1 -translate-y-1/2 z-10' />
-            <span class='line line-v w-px h-500 bg-rose-400/15 absolute top-1/2 left-10 -translate-y-1/2 z-10' />
-            <span class='line line-v w-px h-500 bg-(--br2) absolute top-1/2 left-8 -translate-y-1/2 z-10' />
+        <TypoTitle class='max-w-[20ch] block text-5xl md:text-6xl text-center leading-16 md:leading-18'>
+            I help people turn dreams into digital <TypoColored TypoColored class='text-5xl md:text-6xl animate-blurred-fade-in'>realities</TypoColored>
+            
+            <span class='w-1000 border-t border-(--br2) absolute top-0 left-1/2 -translate-x-1/2' />
+            <span class='w-3 aspect-square bg-(--bg1) border border-(--br3) rounded-xs absolute -top-1.5 -left-1.25 z-10' />
 
-            {/* Diagonal */}
-            <span class='line line-v w-px h-500 bg-(--br2) absolute top-1/2 left-3 -translate-y-1/2 z-10 rotate-33' />
-            <span class='line line-v w-px h-500 bg-(--br2) absolute top-1/2 left-5 -translate-y-1/2 z-10 rotate-33' />
-        </article>
+            <span class='h-500 border-l border-(--br2) absolute top-1/2 left-0 -translate-y-1/2' />
+            <span class='h-500 border-r border-(--br2) absolute top-1/2 right-0 -translate-y-1/2' />
 
-        <article class='relative z-30'>
-            <h1 class='text-8xl font-logo'>
-                了
-            </h1>
-        </article>
+            <span class='w-1000 border-t border-(--br2) absolute bottom-0 left-1/2 -translate-x-1/2' />
+            <span class='w-3 aspect-square bg-(--bg1) border border-(--br3) rounded-xs absolute -bottom-1.25 -right-1.5 z-10' />
+        </TypoTitle>
 
-        <article class='third-char relative'>
-            <h1 class='text-8xl font-logo relative z-20 text-transparent'>
-                x
-            </h1>
-
-            {/* Vertical */}
-            <span class='w-1000 border-v-dashes border-r h-500 absolute top-1/2 left-1 -translate-y-1/2 z-10' />
-            <span class='line line-v w-px h-500 bg-rose-400/15 absolute top-1/2 left-10 -translate-y-1/2 z-10' />
-            <span class='line line-v w-px h-500 bg-(--br2) absolute top-1/2 left-8 -translate-y-1/2 z-10' />
-
-            {/* Diagonal */}
-            <span class='line line-v w-px h-500 bg-(--br2) absolute top-1/2 left-3 -translate-y-1/2 z-10 rotate-33' />
-            <span class='line line-v w-px h-500 bg-(--br2) absolute top-1/2 left-5 -translate-y-1/2 z-10 rotate-33' />
-        </article>
-
-        { /* Line top horizontal */ }
-        <span class='line line-h w-1000 h-px bg-rose-400/15 absolute bottom-8 left-1/2 -translate-x-1/2 z-10' />
-        <span class='line line-h w-1000 h-px bg-rose-400/15 absolute bottom-6 left-1/2 -translate-x-1/2 z-10' />
-    </header>
-
-    <TypoTitle class='max-w-[20ch] block text-5xl md:text-6xl text-center leading-16 md:leading-18 relative z-20'>
-        I help people turn dreams into digital <TypoColored TypoColored class='text-5xl md:text-6xl animate-blurred-fade-in'>realities</TypoColored>
-
-        <span class='w-1000 border-h-dashes border-t absolute -top-4 left-1/2 -translate-x-1/2' />
-        <span class='h-500 border-v-dashes border-l absolute top-1/2 -left-4 -translate-y-1/2' />
-        <span class='h-500 border-v-dashes border-l absolute top-1/2 -right-4 -translate-y-1/2' />
-        <span class='w-1000 border-h-dashes border-t absolute -bottom-4 left-1/2 -translate-x-1/2' />
-    </TypoTitle>
-
-    <FloatCloudBanner />
+        <footer class='flex relative'>
+            <span class='w-1000 h-px bg-rose-400/15 absolute -bottom-16 left-1/2 -translate-x-1/2 z-10' />
+            <span class='w-1000 h-px bg-rose-400/15 absolute -bottom-18 left-1/2 -translate-x-1/2 z-10' />
+        </footer>
+    </article>
 </section>
-
-<style>
-    .first-char {
-        .line:nth-of-type(2)::after { animation-delay: 2s; }
-        .line:nth-of-type(3)::after { animation-delay: 4s; }
-        .line:nth-of-type(4)::after { animation-delay: 6s; }
-        .line:nth-of-type(5)::after { animation-delay: 8s; }
-    }
-
-    .third-char {
-        .line:nth-of-type(2)::after { animation-delay: 1s; }
-        .line:nth-of-type(3)::after { animation-delay: 3s; }
-        .line:nth-of-type(4)::after { animation-delay: 5s; }
-        .line:nth-of-type(5)::after { animation-delay: 7s; }
-    }
-
-    .line-h:nth-of-type(1)::after { animation-delay: 11s; }
-    .line-h:nth-of-type(2)::after { animation-delay: 12s; }
-    .line-h:nth-of-type(3)::after { animation-delay: 13s; }
-    .line-h:nth-of-type(4)::after { animation-delay: 14s; }
-</style>
