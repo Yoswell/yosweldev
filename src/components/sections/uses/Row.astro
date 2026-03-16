@@ -28,9 +28,9 @@ const { number, title, LIST } = Astro.props as RowProps
     </article>
 
     <article class='border-v-dashes border-t md:border-l md:border-t-0 relative overflow-hidden'>
-        <ul class='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-px leading-none'>
+        <ul class='h-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-px leading-none'>
             {LIST.map((item) => (
-                <li class='flex flex-col items-center p-6 group hover:bg-(--bg1) hover:outline hover:outline-(--br2)'>
+                <li class='h-full flex flex-col items-center justify-center p-6 group hover:bg-(--bg1) hover:outline hover:outline-(--br2)'>
                     <div class='w-10 h-10 border border-dashed border-(--br3) p-1.75 rounded-md group-hover:hidden bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px] animate-tada'>
                         <img
                             src={ item.src }

@@ -134,5 +134,15 @@ export const HACKING_LIST = [
         name: 'GoLang',
         src: '/static/images/tools/golang.svg',
         alt: 'GoLang'
-    }
+    },
+    {
+        name: 'VM Ware',
+        src: '/static/images/tools/vmware.svg',
+        alt: 'VM Ware'
+    },
+    {
+        name: 'Wireshark',
+        src: '/static/images/tools/wireshark.svg',
+        alt: 'Wireshark'
+    },
 ]
