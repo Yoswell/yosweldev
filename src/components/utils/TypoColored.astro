@@ -2,7 +2,7 @@
 const { as: Tag = 'span' } = Astro.props
 ---
 
-<Tag class={`text-white font-title-italic title-gradient-to-r ${ Astro.props.class }`}>
+<Tag class={`font-title-italic title-gradient-to-r ${ Astro.props.class }`}>
     <slot />
 </Tag>
 

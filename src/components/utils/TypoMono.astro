@@ -2,7 +2,7 @@
 const { as: Tag = 'code' } = Astro.props
 ---
 
-<Tag class={`text-xs font-mono ${ Astro.props.class }`}>
+<Tag class={`font-mono ${ Astro.props.class }`}>
     <slot />
 </Tag>
 

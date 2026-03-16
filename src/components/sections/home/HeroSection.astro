@@ -1,31 +1,52 @@
 ---
+import Hr from '@/components/utils/Hr.astro'
 import TypoColored from '@/components/utils/TypoColored.astro'
+import TypoMono from '@/components/utils/TypoMono.astro'
 import TypoTitle from '@/components/utils/TypoTitle.astro'
 ---
 
 <section class='h-full flex flex-col items-center justify-center relative overflow-hidden'>
-    <article class='bg-(--bg1) p-6 -mt-20 relative z-20'>
+    <Hr />
+
+    <article class='p-6 relative z-20'>
         <header class='flex relative'>
             <span class='w-1000 h-px bg-rose-400/15 absolute -top-16 left-1/2 -translate-x-1/2 z-10' />
             <span class='w-1000 h-px bg-rose-400/15 absolute -top-18 left-1/2 -translate-x-1/2 z-10' />
         </header>
 
-        <TypoTitle class='max-w-[20ch] block text-5xl md:text-6xl text-center leading-16 md:leading-18'>
-            I help people turn dreams into digital <TypoColored TypoColored class='text-5xl md:text-6xl animate-blurred-fade-in'>realities</TypoColored>
+        <TypoTitle class='block text-4xl sm:text-5xl md:text-6xl text-center leading-12 sm:leading-14 md:leading-18'>
+            I help people transform</br>
+            realities into digital <TypoColored class='text-4xl sm:text-5xl animate-blurred-fade-in'>experiences</TypoColored>
             
-            <span class='w-1000 border-t border-(--br2) absolute top-0 left-1/2 -translate-x-1/2' />
-            <span class='w-3 aspect-square bg-(--bg1) border border-(--br3) rounded-xs absolute -top-1.5 -left-1.25 z-10' />
-
-            <span class='h-500 border-l border-(--br2) absolute top-1/2 left-0 -translate-y-1/2' />
-            <span class='h-500 border-r border-(--br2) absolute top-1/2 right-0 -translate-y-1/2' />
-
-            <span class='w-1000 border-t border-(--br2) absolute bottom-0 left-1/2 -translate-x-1/2' />
-            <span class='w-3 aspect-square bg-(--bg1) border border-(--br3) rounded-xs absolute -bottom-1.25 -right-1.5 z-10' />
+            <span class='hidden md:block h-500 border-l border-(--br2) absolute top-1/2 left-0 -translate-y-1/2' />
+            <span class='hidden md:block h-500 border-r border-(--br2) absolute top-1/2 right-0 -translate-y-1/2' />
         </TypoTitle>
-
-        <footer class='flex relative'>
-            <span class='w-1000 h-px bg-rose-400/15 absolute -bottom-16 left-1/2 -translate-x-1/2 z-10' />
-            <span class='w-1000 h-px bg-rose-400/15 absolute -bottom-18 left-1/2 -translate-x-1/2 z-10' />
-        </footer>
     </article>
+
+    <Hr />
+
+    <article class='flex items-center justify-center gap-4 p-4'>
+        <TypoMono class='text-(--fg2) text-sm text-center font-mono uppercase'>
+            I'm Yoswel
+        </TypoMono>
+        
+        <div class='
+            w-20 h-12 bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px] border border-(--br2) rounded-lg 
+            overflow-hidden pointer-events-none select-none animate-tada -rotate-6
+        '>
+            <img
+                src='/static/images/gallery/ecsc-2025-10.jpg'
+                alt='Personal image profile'
+                decoding='async'
+                onload='this.setAttribute("data-img-loaded", "true");'
+                class='duration-100 ease-in-out [&:not([data-img-loaded])]:opacity-0 [&:not([data-img-loaded])]:scale-0'
+            />
+        </div>
+        
+        <TypoMono class='text-(--fg2) text-sm text-center font-mono uppercase'>
+            a Penetration Tester
+        </TypoMono>
+    </article>
+
+    <Hr />
 </section>

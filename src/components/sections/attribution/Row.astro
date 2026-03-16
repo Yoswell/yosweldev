@@ -21,7 +21,7 @@ const { number, title, LIST } = Astro.props as RowProps
 <div class='grid md:grid-cols-[200px_1fr] lg:grid-cols-[220px_1fr] xl:grid-cols-[240px_1fr] md:gap-6'>
     <article class='border-v-dashes md:border-r p-6 leading-none'>
         <header>
-            <TypoMono class='text-(--fg3) uppercase'>
+            <TypoMono class='text-(--fg3) text-xs uppercase'>
                 { number }
             </TypoMono>
             
@@ -42,7 +42,7 @@ const { number, title, LIST } = Astro.props as RowProps
                        arrow>
 
                        <div>
-                           <TypoMono class='text-(--fg3)'>
+                           <TypoMono class='text-(--fg3) text-xs'>
                                0{ index + 1 }
                            </TypoMono>
                            <h6 class='text-white block mt-4'>

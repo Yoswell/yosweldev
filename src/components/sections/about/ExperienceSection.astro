@@ -12,21 +12,21 @@ const EXP_LENGTH = EXPERIENCE_LIST.length - 1
         {EXPERIENCE_LIST.map((experience, index) => (
             <li class={`grid md:grid-cols-[200px_1fr] lg:grid-cols-[220px_1fr] xl:grid-cols-[240px_1fr] md:gap-6 ${ index < EXP_LENGTH && 'border-b border-(--br2)'}`}>
                 <CompanyCol
-                    joinedDate={experience.joinedDate}
-                    company={experience.company}
-                    logo={experience.logo}
-                    logoAlt={experience.logoAlt}
-                    location={experience.location ? experience.location : ''}
-                    workMode={experience.workMode}
-                    lastExperience={true}
+                    joinedDate={ experience.joinedDate }
+                    company={ experience.company }
+                    logo={ experience.logo }
+                    logoAlt={ experience.logoAlt }
+                    location={ experience.location ? experience.location : '' }
+                    workMode={ experience.workMode }
+                    lastExperience={ true}
                 />
 
                 <PositionCol
-                    role={experience.role}
-                    description={experience.description}
-                    responsibilities={experience.responsibilities}
-                    learnedSkills={experience.learnedSkills}
-                    lastExperience={true}   
+                    role={ experience.role }
+                    description={ experience.description }
+                    responsibilities={ experience.responsibilities }
+                    learnedSkills={ experience.learnedSkills }
+                    lastExperience={ true }   
                 />
             </li>  
         ))}

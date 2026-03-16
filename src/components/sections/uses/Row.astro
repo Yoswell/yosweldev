@@ -18,7 +18,7 @@ const { number, title, LIST } = Astro.props as RowProps
 
 <div class='grid md:grid-cols-[200px_1fr] lg:grid-cols-[220px_1fr] xl:grid-cols-[240px_1fr] md:gap-6'>
     <article class='border-v-dashes md:border-r p-6 leading-none'>
-        <TypoMono class='text-(--fg3) uppercase'>
+        <TypoMono class='text-(--fg3) text-xs uppercase'>
             { number }
         </TypoMono>
         
@@ -31,7 +31,7 @@ const { number, title, LIST } = Astro.props as RowProps
         <ul class='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-px leading-none'>
             {LIST.map((item) => (
                 <li class='flex flex-col items-center p-6 group hover:bg-(--bg1) hover:outline hover:outline-(--br2)'>
-                    <div class='w-10 border border-dashed border-(--br3) p-1.5 rounded-md group-hover:hidden bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px] animate-tada'>
+                    <div class='w-10 h-10 border border-dashed border-(--br3) p-1.75 rounded-md group-hover:hidden bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px] animate-tada'>
                         <img
                             src={ item.src }
                             alt={ item.alt }
