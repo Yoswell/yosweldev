@@ -22,9 +22,10 @@ const { ...props } = Astro.props
             event.slug === props.key && (
                 <article class='grid gap-4 leading-none'>
                     <header>
-                        <TypoMono class='text-(--fg3) uppercase'>
+                        <TypoMono class='text-(--fg3) text-xs uppercase'>
                             { event.slug }
                         </TypoMono>
+
                         <TypoTitle class='block text-2xl mt-2'>
                             { event.name }
                         </TypoTitle>
