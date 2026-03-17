@@ -31,13 +31,13 @@ const { number, title, LIST } = Astro.props as RowProps
         <ul class='h-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-px leading-none'>
             {LIST.map((item) => (
                 <li class='h-full flex flex-col items-center justify-center p-6 group hover:bg-(--bg1) hover:outline hover:outline-(--br2)'>
-                    <div class='w-10 h-10 border border-dashed border-(--br3) p-1.75 rounded-md group-hover:hidden bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px] animate-tada'>
+                    <div class='w-10 h-10 grid place-items-center place-content-center border border-dashed border-(--br3) p-1.75 rounded-md group-hover:hidden bg-[url("/backgrounds/lines-bg.svg")] bg-size-[40px_40px] relative animate-tada'>
                         <img
                             src={ item.src }
                             alt={ item.alt }
                             decoding='async'
                             onload='this.setAttribute("data-img-loaded", "true");'
-                            class='aspect-square duration-100 ease-in-out [&:not([data-img-loaded])]:opacity-0 [&:not([data-img-loaded])]:scale-0'
+                            class='w-full h-full duration-100 ease-in-out [&:not([data-img-loaded])]:opacity-0 [&:not([data-img-loaded])]:scale-0'
                         />
                     </div>
 

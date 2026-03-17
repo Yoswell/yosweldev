@@ -5,19 +5,9 @@ export const TOOLS_USE_LIST = [
         alt: 'Visual Studio Code'
     },
     {
-        name: 'Obsidian',
-        src: '/static/images/tools/obsidian.svg',
-        alt: 'Obsidian'
-    },
-    {
         name: 'Visual Studio',
         src: '/static/images/tools/vs.svg',
         alt: 'Visual Studio'
-    },
-    {
-        name: 'Linux',
-        src: '/static/images/tools/linux.svg',
-        alt: 'Linux'
     },
     {
         name: 'Github',
@@ -50,9 +40,14 @@ export const TOOLS_USE_LIST = [
         alt: 'Vite'
     },
     {
-        name: 'Discord',
-        src: '/static/images/tools/discord.svg',
-        alt: 'Discord'
+        name: 'Claude AI',
+        src: '/static/images/tools/claude.svg',
+        alt: 'Claude AI'
+    },
+    {
+        name: 'Micosoft Copilot',
+        src: '/static/images/tools/copilot.svg',
+        alt: 'Micosoft Copilot'
     },
 ]
 
@@ -102,47 +97,35 @@ export const SKILLS_LIST = [
         src: '/static/images/tools/python.svg',
         alt: 'Python'
     },
+    {
+        name: 'Astro',
+        src: '/static/images/tools/astro.svg',
+        alt: 'Astro'
+    },
 ]
 
-export const HACKING_LIST = [
+export const APPS_LIST = [
     {
-        name: 'Kali Linux',
-        src: '/static/images/tools/kali.svg',
-        alt: 'Kali Linux'
+        name: 'Obsidian',
+        src: '/static/images/tools/obsidian.svg',
+        alt: 'Obsidian'
+    },
+    {
+        name: 'Discord',
+        src: '/static/images/tools/discord.svg',
+        alt: 'Discord'
+    },
+]
+
+export const OS_LIST = [
+    {
+        name: 'Linux',
+        src: '/static/images/tools/linux.svg',
+        alt: 'Linux'
     },
     {
         name: 'Windows',
         src: '/static/images/tools/windows.svg',
         alt: 'Windows'
-    },
-    {
-        name: 'Vim',
-        src: '/static/images/tools/vim.svg',
-        alt: 'Vim'
-    },
-    {
-        name: 'PowerShell',
-        src: '/static/images/tools/powershell.svg',
-        alt: 'PowerShell'
-    },
-    {
-        name: 'Markdown',
-        src: '/static/images/tools/markdown.svg',
-        alt: 'Markdown'
-    },
-    {
-        name: 'GoLang',
-        src: '/static/images/tools/golang.svg',
-        alt: 'GoLang'
-    },
-    {
-        name: 'VM Ware',
-        src: '/static/images/tools/vmware.svg',
-        alt: 'VM Ware'
-    },
-    {
-        name: 'Wireshark',
-        src: '/static/images/tools/wireshark.svg',
-        alt: 'Wireshark'
     },
 ]
