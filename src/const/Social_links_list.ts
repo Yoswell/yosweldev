@@ -12,7 +12,7 @@ export const CODE_LINKS_LIST = [
     },
     {
         head: 'Hack The Box',
-        content: 'htb/public/users/vishok',
+        content: 'htb/users/vishok',
         link: 'https://www.hackthebox.com/users/vishok',
         icon: HackerIcon,
     },
