@@ -31,12 +31,12 @@ const { ...props } = Astro.props
         <Image
             src={ FlySvg }
             alt='Fly source background'
-            class='absolute -bottom-9.5 -right-48 w-115 saturate-0 select-none pointer-events-none animate-jelly'
+            class='absolute -bottom-9.5 -right-49 w-115 saturate-0 select-none pointer-events-none animate-jelly'
         />
 
         <button
             id={`read-${ props.key }-button`} 
-            class='absolute -bottom-4 -right-3.25 bg-neutral-900/10 backdrop-blur-xs border border-(--br3) rounded-full p-2 cursor-pointer animate-jelly'>
+            class='absolute -bottom-3.75 -right-4 bg-neutral-900/10 backdrop-blur-xs border border-(--br3) rounded-full p-2 cursor-pointer animate-jelly'>
 
             <svg class='w-20 grid place-content-cente transform-origin-center-center animate-spin animate-duration-[8s]' fill='black' overflow='visible' viewBox='0 0 100 100'>
                 <path d='M 0 50 L 0 50 A 1 1 0 0 1 100 50 L 100 50 L 100 50 A 1 1 0 0 1 0 50 L 0 50' fill='transparent' id='curve-wnxkz4' stroke-width='none'></path>
